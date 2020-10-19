@@ -1,0 +1,42 @@
+StairCity
+0 0 20 20
+20
+
+#Things
+becker.robots.Thing 5 2
+becker.robots.Thing 4 3
+becker.robots.Thing 3 4
+becker.robots.Thing 2 5
+becker.robots.Thing 3 6
+becker.robots.Thing 4 7
+becker.robots.Thing 5 8
+
+#Staircase 1
+becker.robots.Wall 6 2 Direction.NORTH
+becker.robots.Wall 5 3 Direction.NORTH
+becker.robots.Wall 4 4 Direction.NORTH
+becker.robots.Wall 3 5 Direction.NORTH
+becker.robots.Wall 4 6 Direction.NORTH
+becker.robots.Wall 5 7 Direction.NORTH
+becker.robots.Wall 6 8 Direction.NORTH
+becker.robots.Wall 5 3 Direction.WEST
+becker.robots.Wall 4 4 Direction.WEST
+becker.robots.Wall 3 5 Direction.WEST
+becker.robots.Wall 3 5 Direction.EAST
+becker.robots.Wall 4 6 Direction.EAST
+becker.robots.Wall 5 7 Direction.EAST
+
+#Staircase 2
+becker.robots.Wall 6 12 Direction.NORTH
+becker.robots.Wall 5 13 Direction.NORTH
+becker.robots.Wall 4 14 Direction.NORTH
+becker.robots.Wall 3 15 Direction.NORTH
+becker.robots.Wall 4 16 Direction.NORTH
+becker.robots.Wall 5 17 Direction.NORTH
+becker.robots.Wall 6 18 Direction.NORTH
+becker.robots.Wall 5 13 Direction.WEST
+becker.robots.Wall 4 14 Direction.WEST
+becker.robots.Wall 3 15 Direction.WEST
+becker.robots.Wall 3 15 Direction.EAST
+becker.robots.Wall 4 16 Direction.EAST
+becker.robots.Wall 5 17 Direction.EAST

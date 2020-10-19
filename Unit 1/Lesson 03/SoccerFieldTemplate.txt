@@ -1,0 +1,21 @@
+SoccerField
+0 0 10 11
+38
+
+becker.robots.Wall 0 0 Direction.EAST
+becker.robots.Wall 1 0 Direction.EAST
+becker.robots.Wall 2 0 Direction.EAST
+becker.robots.Wall 3 0 Direction.EAST
+becker.robots.Wall 5 0 Direction.EAST
+becker.robots.Wall 6 0 Direction.EAST
+becker.robots.Wall 7 0 Direction.EAST
+becker.robots.Wall 8 0 Direction.EAST
+becker.robots.Wall 0 10 Direction.WEST
+becker.robots.Wall 1 10 Direction.WEST
+becker.robots.Wall 2 10 Direction.WEST
+becker.robots.Wall 3 10 Direction.WEST
+becker.robots.Wall 5 10 Direction.WEST
+becker.robots.Wall 6 10 Direction.WEST
+becker.robots.Wall 7 10 Direction.WEST
+becker.robots.Wall 8 10 Direction.WEST
+becker.robots.Thing 4 8
