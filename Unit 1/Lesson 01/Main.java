@@ -1,0 +1,227 @@
+import becker.robots.*;
+import becker.robots.Robot;
+
+import java.awt.*;
+
+public class Main
+{
+    public static void main(String[] args)
+    {
+	    // Variable declaration
+        City raceMap = new City();
+        raceMap.setSize(700, 500);
+        Robot raceCar1 = new Robot(raceMap, 1, 0, Direction.SOUTH);
+        raceCar1.setColor(Color.CYAN);
+        raceCar1.setSpeed(15);
+        Robot raceCar2 = new Robot(raceMap, 1, 1, Direction.SOUTH);
+        raceCar2.setSpeed(15);
+        //Inner walls
+        Wall wall1 = new Wall(raceMap, 2, 2, Direction.WEST);
+        Wall wall2 = new Wall(raceMap, 2, 2, Direction.NORTH);
+        Wall wall3 = new Wall(raceMap, 2, 3, Direction.NORTH);
+        Wall wall4 = new Wall(raceMap, 2, 4, Direction.NORTH);
+        Wall wall5 = new Wall(raceMap, 2, 5, Direction.NORTH);
+        Wall wall6 = new Wall(raceMap, 2, 6, Direction.NORTH);
+        Wall wall7 = new Wall(raceMap, 2, 7, Direction.NORTH);
+        Wall wall8 = new Wall(raceMap, 2, 7, Direction.EAST);
+        Wall wall9 = new Wall(raceMap, 3, 7, Direction.EAST);
+        Wall wall10 = new Wall(raceMap, 4, 7, Direction.EAST);
+        Wall wall11 = new Wall(raceMap, 4, 7, Direction.SOUTH);
+        Wall wall12 = new Wall(raceMap, 4, 6, Direction.SOUTH);
+        Wall wall13 = new Wall(raceMap, 4, 5, Direction.SOUTH);
+        Wall wall14 = new Wall(raceMap, 4, 4, Direction.SOUTH);
+        Wall wall15 = new Wall(raceMap, 4, 3, Direction.SOUTH);
+        Wall wall16 = new Wall(raceMap, 4, 2, Direction.SOUTH);
+        Wall wall17 = new Wall(raceMap, 4, 2, Direction.WEST);
+        Wall wall18 = new Wall(raceMap, 3, 2, Direction.WEST);
+
+        //Inner Track
+        Wall iT = new Wall(raceMap, 2, 1, Direction.WEST);
+        Wall iT2 = new Wall(raceMap, 3, 1, Direction.WEST);
+        Wall iT3 = new Wall(raceMap, 4, 1, Direction.WEST);
+        Wall iT4 = new Wall(raceMap, 5, 1, Direction.WEST);
+        Wall iT5 = new Wall(raceMap, 5, 1, Direction.SOUTH);
+        Wall iT6 = new Wall(raceMap, 5, 2, Direction.SOUTH);
+        Wall iT7 = new Wall(raceMap, 5, 3, Direction.SOUTH);
+        Wall iT8 = new Wall(raceMap, 5, 4, Direction.SOUTH);
+        Wall iT9 = new Wall(raceMap, 5, 5, Direction.SOUTH);
+        Wall iT10 = new Wall(raceMap, 5, 6, Direction.SOUTH);
+        Wall iT11 = new Wall(raceMap, 5, 7, Direction.SOUTH);
+        Wall iT12 = new Wall(raceMap, 5, 8, Direction.SOUTH);
+        Wall iT13 = new Wall(raceMap, 5, 8, Direction.EAST);
+        Wall iT14 = new Wall(raceMap, 4, 8, Direction.EAST);
+        Wall iT15 = new Wall(raceMap, 3, 8, Direction.EAST);
+        Wall iT16 = new Wall(raceMap, 2, 8, Direction.EAST);
+        Wall iT17 = new Wall(raceMap, 1, 8, Direction.EAST);
+        Wall iT18 = new Wall(raceMap, 1, 8, Direction.NORTH);
+        Wall iT19 = new Wall(raceMap, 1, 7, Direction.NORTH);
+        Wall iT20 = new Wall(raceMap, 1, 6, Direction.NORTH);
+        Wall iT21 = new Wall(raceMap, 1, 5, Direction.NORTH);
+        Wall iT22 = new Wall(raceMap, 1, 4, Direction.NORTH);
+        Wall iT23 = new Wall(raceMap, 1, 3, Direction.NORTH);
+        Wall iT24 = new Wall(raceMap, 1, 2, Direction.NORTH);
+        
+        //Outer Track
+        Wall oT1 = new Wall(raceMap, 2, 0, Direction.WEST);
+        Wall oT2 = new Wall(raceMap, 3, 0, Direction.WEST);
+        Wall oT3 = new Wall(raceMap, 4, 0, Direction.WEST);
+        Wall oT4 = new Wall(raceMap, 5, 0, Direction.WEST);
+        Wall oT5 = new Wall(raceMap, 6, 0, Direction.WEST);
+        Wall oT6 = new Wall(raceMap, 6, 0, Direction.SOUTH);
+        Wall oT7 = new Wall(raceMap, 6, 1, Direction.SOUTH);
+        Wall oT8 = new Wall(raceMap, 6, 2, Direction.SOUTH);
+        Wall oT9 = new Wall(raceMap, 6, 3, Direction.SOUTH);
+        Wall oT10 = new Wall(raceMap, 6, 4, Direction.SOUTH);
+        Wall oT11 = new Wall(raceMap, 6, 5, Direction.SOUTH);
+        Wall oT12 = new Wall(raceMap, 6, 6, Direction.SOUTH);
+        Wall oT13 = new Wall(raceMap, 6, 7, Direction.SOUTH);
+        Wall oT14 = new Wall(raceMap, 6, 8, Direction.SOUTH);
+        Wall oT15 = new Wall(raceMap, 6, 9, Direction.SOUTH);
+        Wall oT16 = new Wall(raceMap, 6, 9, Direction.EAST);
+        Wall oT17 = new Wall(raceMap, 5, 9, Direction.EAST);
+        Wall oT18 = new Wall(raceMap, 4, 9, Direction.EAST);
+        Wall oT19 = new Wall(raceMap, 3, 9, Direction.EAST);
+        Wall oT20 = new Wall(raceMap, 2, 9, Direction.EAST);
+        Wall oT21 = new Wall(raceMap, 1, 9, Direction.EAST);
+        Wall oT22 = new Wall(raceMap, 0, 9, Direction.EAST);
+        Wall oT23 = new Wall(raceMap, 0, 9, Direction.NORTH);
+        Wall oT24 = new Wall(raceMap, 0, 8, Direction.NORTH);
+        Wall oT25 = new Wall(raceMap, 0, 7, Direction.NORTH);
+        Wall oT26 = new Wall(raceMap, 0, 6, Direction.NORTH);
+        Wall oT27 = new Wall(raceMap, 0, 5, Direction.NORTH);
+        Wall oT28 = new Wall(raceMap, 0, 4, Direction.NORTH);
+        Wall oT29 = new Wall(raceMap, 0, 3, Direction.NORTH);
+        Wall oT30 = new Wall(raceMap, 0, 2, Direction.NORTH);
+        Wall oT31 = new Wall(raceMap, 0, 1, Direction.NORTH);
+        Wall oT32 = new Wall(raceMap, 0, 1, Direction.WEST);
+        Wall oT33 = new Wall(raceMap, 1, 0, Direction.NORTH);
+        Wall oT34 = new Wall(raceMap, 1, 0, Direction.WEST);
+
+
+        //Race car movement
+        for (int i = 0; i < 5; i++)
+        {
+            raceCar1.move();
+            raceCar2.move();
+            raceCar1.move();
+            raceCar2.move();
+            raceCar1.move();
+            raceCar2.move();
+            raceCar1.move();
+            raceCar2.move();
+            raceCar1.move();
+            raceCar2.turnLeft();
+            raceCar1.turnLeft();
+            raceCar2.move();
+            raceCar1.move();
+            raceCar2.move();
+            raceCar1.move();
+            raceCar2.move();
+            raceCar1.move();
+            raceCar2.move();
+            raceCar1.move();
+            raceCar2.move();
+            raceCar1.move();
+            raceCar2.move();
+            raceCar1.move();
+            raceCar2.move();
+            raceCar1.move();
+            raceCar2.turnLeft();
+            raceCar1.move();
+            raceCar2.move();
+            raceCar1.move();
+            raceCar2.move();
+            raceCar1.turnLeft();
+            raceCar2.move();
+            raceCar1.move();
+            raceCar2.move();
+            raceCar1.move();
+            raceCar2.turnLeft();
+            raceCar1.move();
+            raceCar2.move();
+            raceCar1.move();
+            raceCar2.move();
+            raceCar1.move();
+            raceCar2.move();
+            raceCar1.move();
+            raceCar2.move();
+            raceCar1.turnLeft();
+            raceCar2.move();
+            raceCar1.move();
+            raceCar2.move();
+            raceCar1.move();
+            raceCar2.move();
+            raceCar1.move();
+            raceCar2.move();
+            raceCar1.move();
+            raceCar2.turnLeft();
+            raceCar1.move();
+            raceCar2.move();
+            raceCar1.move();
+            raceCar2.move();
+            raceCar1.move();
+            raceCar2.move();
+            raceCar1.move();
+            raceCar2.move();
+            raceCar1.turnLeft();
+            raceCar2.move();
+            raceCar1.move();
+            raceCar2.turnLeft();
+            raceCar1.move();
+            raceCar2.move();
+            raceCar1.move();
+            raceCar2.move();
+            raceCar1.move();
+            raceCar2.move();
+            raceCar1.move();
+            raceCar2.move();
+            raceCar1.turnLeft();
+            raceCar2.move();
+            raceCar1.move();
+            raceCar2.move();
+            raceCar1.move();
+            raceCar2.move();
+            raceCar1.move();
+            raceCar2.move();
+            raceCar1.move();
+            raceCar2.move();
+            raceCar1.move();
+            raceCar2.turnLeft();
+            raceCar1.move();
+            raceCar2.move();
+            raceCar1.move();
+            raceCar2.move();
+            raceCar1.turnLeft();
+            raceCar2.move();
+            raceCar1.move();
+            raceCar2.move();
+            raceCar1.move();
+            raceCar2.move();
+            raceCar1.move();
+            raceCar2.move();
+            raceCar1.move();
+            raceCar2.turnLeft();
+            raceCar1.turnLeft();
+            raceCar2.move();
+            raceCar1.move();
+            raceCar2.move();
+            raceCar1.move();
+            raceCar2.move();
+            raceCar1.move();
+            raceCar2.move();
+            raceCar1.move();
+            raceCar2.move();
+            raceCar1.move();
+            raceCar2.move();
+            raceCar1.move();
+            raceCar2.move();
+            raceCar1.move();
+            raceCar2.move();
+            raceCar1.move();
+            raceCar2.turnLeft();
+            raceCar1.turnLeft();
+            raceCar2.move();
+        }
+
+    }
+}
