@@ -1,0 +1,270 @@
+/*
+SmileyFace2
+Created by: Kevin Chen
+Last Modified: October 15, 2020
+Description: A SmileyFace with more features
+ */
+
+import javax.swing.*;
+import java.awt.*;
+
+public class SmileyFace2 extends JComponent
+{
+    //Instance Variables
+    private final int eyeHeight = 20; //where the eye should be
+    private int leftEyeHeight = 20;   //how big the left eye is
+    private int leftEyeY = 58;        //Where the left eye is vertically
+
+    private int tongueX = 90;         //x coordinate of the tongue
+    private int tongueY = 109;        //y coordinate of the tongue
+
+    private int mouthY = 100;         // y coordinate of the mouth
+    private int mouthStartAngle = -10;// starting angle of the mouth
+    private int mouthAngle = -160;    // arc angle of the mouth
+    private int mouthHeight = 50;     // how big the mouth arc is
+
+    private boolean frown = false;    //is the face frowning
+    private boolean smile = true;     //is the face smiling
+
+    //Default constructor
+    public SmileyFace2()
+    {
+        super();
+        Dimension size = new Dimension(200, 200);
+        this.setPreferredSize(size);
+    }
+
+    //Draws a smiley face using paintComponent
+    public void paintComponent(Graphics g)
+    {
+        super.paintComponent(g);
+
+        //Head
+        g.setColor(Color.YELLOW);
+        g.fillOval(0, 0, 200, 200);
+
+        //The tongue
+        g.setColor(Color.RED);
+        g.fillOval(tongueX, tongueY, 40, 40);
+        g.setColor(Color.YELLOW);
+        g.fillOval(50, 100, 100, 50);
+
+        //The outline of the face
+        g.setColor(Color.BLACK);
+        g.drawOval(0, 0, 200, 200);
+
+        //Eyes
+        g.fillOval(52, leftEyeY, 20, leftEyeHeight);//left eye
+        g.fillOval(128, 58, 20, 20);//right eye
+
+        //Mouth
+        g.drawArc(50, mouthY, 100, mouthHeight, mouthStartAngle, mouthAngle);
+        //g.drawArc(50, 100, 100, 50, -10, -160);
+
+    }
+
+    //winking
+    public void wink()
+    {
+        //closing the eye
+        while (leftEyeHeight > 0)
+        {
+            leftEyeHeight --;
+            if (leftEyeHeight % 2  == 0)
+            {
+                leftEyeY ++;
+            }
+            try
+            {
+                Thread.sleep(20);
+            } catch (InterruptedException e)
+            {
+            }
+            this.repaint();
+        }
+
+        //opening the eye
+        while (leftEyeHeight < eyeHeight)
+        {
+            leftEyeHeight ++;
+            if (leftEyeHeight % 2  == 0)
+            {
+                leftEyeY --;
+            }
+            try
+            {
+                Thread.sleep(20);
+            } catch (InterruptedException e)
+            {
+            }
+            this.repaint();
+        }
+        try
+        {
+            Thread.sleep(200);
+        } catch (InterruptedException e)
+        {
+        }
+    }
+
+    //Stick out the tongue
+    public void stickTongue()
+    {
+        //sticking the tongue out
+        for (int i = 0; i < 20; i++)
+        {
+            tongueX ++;
+            tongueY ++;
+            try
+            {
+                Thread.sleep(50);
+            } catch (InterruptedException e)
+            {
+            }
+            this.repaint();
+        }
+        try
+        {
+            Thread.sleep(200);
+        } catch (InterruptedException e)
+        {
+        }
+    }
+
+    //Bringing the tongue back
+    public void tongueIn()
+    {
+        //bringing the tongue back
+        for (int i = 0; i < 20; i++)
+        {
+            tongueX--;
+            tongueY --;
+            try
+            {
+                Thread.sleep(50);
+            } catch (InterruptedException e)
+            {
+            }
+            this.repaint();
+        }
+        try
+        {
+            Thread.sleep(200);
+        } catch (InterruptedException e)
+        {
+        }
+    }
+
+    //turning into a frown
+    public void frown()
+    {
+        //only runs if it is not frowning
+        if (smile)
+        {
+            boolean halfWay = false;
+            //turns into a frown
+            for (int i = 0 ; i < 25; i++)
+            {
+                if (halfWay)
+                {
+                    mouthY --;
+                    mouthHeight += 4;
+                    mouthStartAngle = 10;
+                    mouthAngle = 160;
+                } else
+                {
+                    mouthY += 3;
+                    mouthHeight -= 4;
+                    if (mouthY >= 136)
+                    {
+                        halfWay = true;
+                    }
+                }
+                try
+                {
+                    Thread.sleep(80);
+                } catch (InterruptedException e)
+                {
+                }
+                this.repaint();
+            }
+            smile = false;
+            frown = true;
+        }
+        try
+        {
+            Thread.sleep(200);
+        } catch (InterruptedException e)
+        {
+        }
+    }
+
+    //makes the face smile
+    public void smile()
+    {
+        //only runs if it is not smiling
+        if (frown)
+        {
+            boolean halfWay = false;
+            //Makes it into a smile
+            for (int i = 0; i < 25; i++)
+            {
+                if (halfWay)
+                {
+                    mouthY -= 3;
+                    mouthHeight += 4;
+                    mouthStartAngle = -10;
+                    mouthAngle = -160;
+                } else
+                {
+                    mouthY ++;
+                    mouthHeight -= 4;
+                    if (mouthY >= 136)
+                    {
+                        halfWay = true;
+                    }
+                }
+                try
+                {
+                    Thread.sleep(80);
+                } catch (InterruptedException e)
+                {
+                }
+                this.repaint();
+            }
+            smile = true;
+            frown = false;
+        }
+        try
+        {
+            Thread.sleep(200);
+        } catch (InterruptedException e)
+        {
+        }
+    }
+
+    //for testing purposes
+    public static void main(String[] args)
+    {
+        JFrame myFrame = new JFrame();
+        JPanel content = new JPanel();
+        SmileyFace2 smiley = new SmileyFace2();
+
+        content.add(smiley);
+
+        myFrame.setContentPane(content);
+
+        myFrame.setTitle("Waving Stick Figure");
+        myFrame.pack();
+        myFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        myFrame.setVisible(true);
+
+
+
+        smiley.wink();
+        smiley.stickTongue();
+        smiley.tongueIn();
+        smiley.frown();
+        smiley.smile();
+    }//end of main
+}// end of class
