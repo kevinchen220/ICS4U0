@@ -1,0 +1,139 @@
+Model 1
+
+main
+    move to pin position
+    spiral method
+end of main
+
+spiral method
+    firstDiagonalUp
+    downTheBack
+    secondDiagonalUp
+    middle
+end of spiral
+
+firstDiagonalUp
+    rightUpSet
+    rightUpSet
+    rightUpSet
+    rightUpSet
+
+end of firstDiagonalUp
+
+downTheBack
+    moveDownSet
+    moveDownSet
+    moveDownSet
+end of downTheBack
+
+secondDiagonalUp
+    leftUpSet
+end of secondDiagonalUp
+
+middle
+    rightUpSet
+end of middle
+
+rightUpSet
+    stepUpRight
+    setPin
+end of rightUpSet
+
+leftUpSet
+    stepUpLeft
+    setPin
+end of leftUpSet
+
+moveDownSet
+    move 2
+    setPin
+end of moveDownSet
+
+stepUpRight
+    turnLeft
+    move
+    turnRight
+    move
+end of stepUpRight
+
+stepUpLeft
+    turnRight
+    move
+    turnLeft
+    move
+end of stepUpLeft
+
+/*
+Strengths:
+- decent efficiency
+- visually appealing
+- gets the work done
+
+Weakness:
+- bot ends up in the middle (cannot get out)
+- more difficult movement (diagonally)
+*/
+
+Model 2
+
+
+main
+    move to pin position
+    leftToRight method
+end of main
+
+leftToRight
+    firstColumn
+    secondColumn
+    thirdColumn
+    fourthColumn
+end of leftToRight
+
+firstColumn
+    putMove
+    turnRight
+    move
+end of firstColumn
+
+secondColumn
+    putMove
+    move
+    putMove
+    turnLeft
+    move
+end of secondColumn
+
+thirdColumn
+    putMove
+    move
+    putMove
+    move
+    putMove
+    turnRight
+    move
+end of thirdColumn
+
+fourthColumn
+    putMove
+    move
+    putMove
+    move
+    putMove
+    move
+    putMove
+end of fourthColumn
+
+putMove
+    setPin
+    move
+end of putMove
+
+/*
+Advantages:
+- Gets the work done
+- Quite efficient
+- Simple movement
+
+Disadvantages:
+- Hard code if there are more pins
+*/
